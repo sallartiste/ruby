@@ -1,5 +1,8 @@
-a = 4
-puts a.object_id
+adresses = [ 
+  [ 17, "Boulevard de la Sauvenière" ], 
+  [ 2, "Place de la République Française"], 
+  [ 19, "Rue de la Renaissance"] 
+]
 
-a = 15 
-puts a.object_id
+adresses.sort
+puts adresses
