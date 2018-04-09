@@ -30,49 +30,45 @@ adresse_de_eric = {
     "pays"         => "Belgique"
     }
 
-    # Nicolas
+  #Nicolas
   nicolas = {
       "prénom"         => "Nicolas",
       "nom de famille" => "Rocher",
-      "téléphone"      => "(+33) 02 93 45 49 19",
-      "email"          => "nico@becode.org",
-      "adresse"        => adresse_de_nicolas
-  }
+      "téléphone"      => "(+33) 03 32 25 45",
+      "email"          => "nico@gmail.com",
+      "adresse"      => adresse_de_nicolas
+      }
 
-  # François
+  #François
   francois = {
       "prénom"         => "François",
       "nom de famille" => "Willemart",
-      "téléphone"      => "(+32) 02 679 24 81",
-      "email"          => "francois@becode.org",
-      "adresse"        => adresse_de_francois
-  }
+      "téléphone"      => "(+32) 02 32 25 45",
+      "email"          => "will_francois@gmail.com",
+      "adresse"      => adresse_de_francois
+      }
 
-  # Marina
+  #Marina
   marina = {
-      "prénom"         => "Marina",
-      "nom de famille" => "Nantini",
-      "téléphone"      => "(+39) 055 681 32 11",
-      "email"          => "marina@becode.org",
-      "adresse"        => adresse_de_marina
-  }
+      "prénom"         => "Marine",
+      "nom de famille" => "Mantini",
+      "téléphone"      => "(+39) 055 32 45",
+      "email"          => "marina@gmail.com",
+      "adresse"      => adresse_de_marina
+      }
 
   #Eric
   eric = {
       "prénom"         => "Eric",
       "nom de famille" => "Salla",
-      "téléphone"      => "(+39) 055 681 32 11",
-      "email"          => "sallartiste@becode.org",
-      "adresse"        => adresse_de_eric
-  }
-
-
+      "téléphone"      => "(+32) 02 05 32 45",
+      "email"          => "sallartiste@gmail.com",
+      "adresse"      => adresse_de_eric
+      }
 
 carnet = [nicolas, francois, marina, eric]
 
 puts
-
-
 
 carnet.each do |personne|
     #Nom et Email
@@ -84,8 +80,15 @@ carnet.each do |personne|
     puts "#{prenom} #{nom}\n     #{email}\n     #{tel}"
 
     #adresse
-    rue = personne["adresse"]["rue"]
-    puts "      " + rue
-
+    rue = personne["adresse"]['rue']
+    codePostal = personne["adresse"]["code postal"]
+    ville = personne["adresse"]['ville']
+    pays = personne["adresse"]['pays']
+    puts "     #{rue}\n     #{codePostal}\n     #{ville}\n     #{pays}"
+    puts
 
 end
+
+
+adresse = Adresse.new
+adresse.rue = "Rue de Ribaucourt, 161"
